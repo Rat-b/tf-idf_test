@@ -1,12 +1,10 @@
-# tf-idf_test
-一个对tf-idf算法的简单应用
-# 作业一-----利用tf-idf检索文本术语的统计算法
-
+# tf-idf_test    一个对tf-idf算法的简单应用
 ## 实现过程及关键代码
 
 ​	TF-IDF(term frequency–inverse document frequency)是一种用于信息检索与数据挖掘的常用加权技术，常用于挖掘文章中的关键词。
 
-​	tf-idf算法的具体使用环境需要一个语料库，在这个语料库中有多条文本信息，我们对每条文本信息使用使用tf-idf算法即可求出该文本信息在整个语料库中最有特征的几个关键词。在BBC中复制三篇新闻到对应文本文件中构成一个简单的语料库
+​	tf-idf算法的具体使用环境需要一个语料库，在这个语料库中有多条文本信息，我们对每条文本信息使用使用tf-idf算法即可求出该文本信息在整个语料库中最有特征的几个关键词。在BBC中复制三篇新闻到对应文本文件中构成一个简单的语料库：
+
 ​	文本1为越南一个犯罪人被捕，文本二为美国总统选举的选票支持率，文本三为英国邮票被盗版印刷。
 
 1. 首先将每条文本信息存储到一个vector中。
@@ -20,12 +18,12 @@
    $$
 
 
-   ```cpp
+ ```cpp
+   
 // 计算词频（TF）
 map<string, double> calculate_tf(const vector<string>& words) {
     map<string, double> tf;
     int total_words = words.size();
-    
     for (const auto& word : words) {
         tf[word] += 1.0 / total_words;
     }
@@ -98,8 +96,3 @@ $$
 
 
 
-![image-20240411232917452](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20240411232917452.png)
-
-3.英国邮票被盗版印刷新闻：
-
-![image-20240411232949161](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20240411232949161.png)
